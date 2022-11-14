@@ -16,10 +16,16 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         color: primary,
       ),
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
-        ),
+      child: TextButton(
+        style: ButtonStyle(
+            shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
+        )),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(25),
+        // ),
         onPressed: onPressed,
         child: CustomText(
           text: text,

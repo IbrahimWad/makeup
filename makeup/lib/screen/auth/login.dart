@@ -15,11 +15,9 @@ class Login extends GetWidget<AuthViewModel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
+      backgroundColor: Colors.white,
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -31,6 +29,9 @@ class Login extends GetWidget<AuthViewModel> {
               key: _formkey,
               child: Column(
                 children: [
+                  SizedBox(
+                    height: Get.height * 0.05,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

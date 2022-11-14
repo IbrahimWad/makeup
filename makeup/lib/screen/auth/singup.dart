@@ -29,7 +29,9 @@ class SingUp extends GetWidget<AuthViewModel> {
           ),
         ),
       ),
+      backgroundColor: Colors.white,
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
           Padding(
             padding: const EdgeInsets.only(

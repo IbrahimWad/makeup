@@ -19,7 +19,7 @@ class CustomSocialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FlatButton(
+      child: TextButton(
         onPressed: onPressed,
         child: Column(
           children: [
