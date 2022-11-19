@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:makeup/main.dart';
+import 'package:makeup/screen/controle_view.dart';
 import 'package:makeup/screen/widget/getBox.dart';
 
 import '../../model/usermodel.dart';
@@ -52,7 +53,7 @@ class AuthViewModel extends GetxController {
     await _auth.signInWithCredential(credential).then((user) {
       saveUser(user);
     });
-    Get.off(CategoryView());
+    Get.off(ControlView());
     box.write(saveName, user);
   }
 
@@ -61,7 +62,7 @@ class AuthViewModel extends GetxController {
     try {
       await _auth.signInWithEmailAndPassword(
           email: '$email', password: '$password');
-      Get.off(CategoryView());
+      Get.off(ControlView());
       box.write(saveName, user);
       isloading = false;
     } on FirebaseAuthException catch (e) {
@@ -85,7 +86,7 @@ class AuthViewModel extends GetxController {
         saveUser(user);
       });
 
-      Get.offAll(CategoryView());
+      Get.offAll(ControlView());
       box.write(saveName, user);
     } on FirebaseAuthException catch (e) {
       print(e);

@@ -11,21 +11,18 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.051,
+      height: 50,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(15),
         color: primary,
       ),
       child: TextButton(
         style: ButtonStyle(
             shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(15),
           ),
         )),
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.circular(25),
-        // ),
         onPressed: onPressed,
         child: CustomText(
           text: text,

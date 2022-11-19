@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:makeup/screen/auth/login.dart';
 import 'package:makeup/screen/category/categoryview.dart';
+import 'package:makeup/screen/controle_view.dart';
 import 'package:makeup/screen/widget/getBox.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'helper/binding.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       title: 'makeup',
-      home: box.read(saveName) == null ? Login() : CategoryView(),
+      home: box.read(saveName) == null ? Login() : ControlView(),
     );
   }
 }

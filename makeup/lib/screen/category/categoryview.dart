@@ -12,8 +12,8 @@ import 'package:makeup/screen/widget/customText.dart';
 import 'package:makeup/screen/widget/getBox.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CategoryView extends StatelessWidget {
-  CategoryView({Key? key}) : super(key: key);
+class HomeView extends StatelessWidget {
+  HomeView({Key? key}) : super(key: key);
 
   String? categoryname;
 
@@ -21,6 +21,10 @@ class CategoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
         backgroundColor: Colors.white,
         body: Container(
           padding: EdgeInsets.symmetric(vertical: 40, horizontal: 10),
@@ -37,6 +41,7 @@ class CategoryView extends StatelessWidget {
               itemCount: controller.categoryModel.length,
               itemBuilder: (BuildContext ctx, index) {
                 return InkWell(
+                  borderRadius: BorderRadius.circular(25),
                   onTap: () async {
                     categoryname = controller.categoryModel[index].name;
                     sharedPreferences = await SharedPreferences.getInstance();

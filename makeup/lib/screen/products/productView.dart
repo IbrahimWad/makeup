@@ -20,6 +20,7 @@ class ProductView extends StatelessWidget {
             builder: (controller) => Container(
               height: Get.height * 0.8,
               child: GridView.builder(
+                physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 200,
                   childAspectRatio: 4 / 5,
@@ -29,6 +30,7 @@ class ProductView extends StatelessWidget {
                 itemCount: controller.productModel.length,
                 itemBuilder: (context, index) {
                   return InkWell(
+                    borderRadius: BorderRadius.circular(25),
                     onTap: () {
                       Get.to(Details(
                           productModel: controller.productModel[index]));
