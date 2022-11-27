@@ -33,33 +33,33 @@ class ControlView extends StatelessWidget {
       builder: (controller) => BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              activeIcon: const Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Text(
+              activeIcon: Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: const Text(
                   "Explore",
                   style: TextStyle(color: secondary),
                 ),
               ),
               label: '',
               icon: Padding(
-                padding: const EdgeInsets.only(top: 25),
+                padding: EdgeInsets.only(top: 20),
                 child: Image.asset(
                   'assets/image/Explore.png',
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                   width: 20,
                 ),
               )),
           BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Text("Cart", style: TextStyle(color: secondary)),
+                padding: EdgeInsets.only(top: 20),
+                child: const Text("Cart", style: TextStyle(color: secondary)),
               ),
               label: '',
               icon: Padding(
-                padding: const EdgeInsets.only(top: 25),
+                padding: EdgeInsets.only(top: 20),
                 child: Image.asset(
                   'assets/image/cart.png',
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                   width: 20,
                 ),
               )),
