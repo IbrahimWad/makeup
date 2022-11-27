@@ -41,6 +41,8 @@ dependencies:
   google_sign_in: ^5.4.1
   get_storage: ^2.0.3
   shared_preferences: ^2.0.15
+  fancy_bottom_navigation: ^0.3.3
+  sqflite: ^2.2.0+3
 
 dev_dependencies:
   flutter_test:

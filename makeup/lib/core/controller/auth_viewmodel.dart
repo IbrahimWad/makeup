@@ -18,7 +18,7 @@ class AuthViewModel extends GetxController {
   bool isloading = false;
 
   final Rxn<User> _user = Rxn<User>();
-  String? get user => _user.value!.email;
+  String? get user => _user.value?.email;
 
   @override
   void onInit() {
