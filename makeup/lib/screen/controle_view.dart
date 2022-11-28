@@ -33,9 +33,9 @@ class ControlView extends StatelessWidget {
       builder: (controller) => BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: const Text(
+              activeIcon: const Padding(
+                padding: EdgeInsets.only(top: 25.0),
+                child: Text(
                   "Explore",
                   style: TextStyle(color: secondary),
                 ),
@@ -50,9 +50,9 @@ class ControlView extends StatelessWidget {
                 ),
               )),
           BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: const Text("Cart", style: TextStyle(color: secondary)),
+              activeIcon: const Padding(
+                padding: EdgeInsets.only(top: 25.0),
+                child: Text("Cart", style: TextStyle(color: secondary)),
               ),
               label: '',
               icon: Padding(
