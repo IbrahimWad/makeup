@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:makeup/screen/widget/getBox.dart';
 
 import '../../model/usermodel.dart';
 import '../../screen/category/categoryview.dart';
+import '../../screen/widget/colors.dart';
 import '../services/firestore_user.dart';
 
 class AuthViewModel extends GetxController {
@@ -18,7 +20,9 @@ class AuthViewModel extends GetxController {
   bool isloading = false;
 
   final Rxn<User> _user = Rxn<User>();
+  Rx<UserModel> userModel = UserModel().obs;
   String? get user => _user.value?.email;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   @override
   void onInit() {
@@ -37,6 +41,11 @@ class AuthViewModel extends GetxController {
   void onClose() {
     // TODO: implement onClose
     super.onClose();
+  }
+
+  updateUserData(Map<String, dynamic> data) {
+    logger.i("UPDATED");
+    firebaseFirestore.collection('Users').doc(_user.value!.uid).update(data);
   }
 
   void googleSignInMethod() async {
@@ -105,6 +114,7 @@ class AuthViewModel extends GetxController {
       email: '${user.user!.email}',
       name: name ?? '${user.user!.displayName}',
       userId: user.user!.uid,
+      cart: [],
     ));
   }
 }

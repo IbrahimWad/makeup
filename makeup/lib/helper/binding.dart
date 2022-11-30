@@ -4,6 +4,8 @@ import 'package:makeup/core/controller/category_viewmodel.dart';
 import 'package:makeup/core/controller/controle_viewModel.dart';
 import 'package:makeup/core/controller/product_viewmodel.dart';
 
+import '../core/controller/cartController.dart';
+
 class Binding extends Bindings {
   @override
   void dependencies() {
@@ -11,5 +13,6 @@ class Binding extends Bindings {
     Get.lazyPut(() => HomeViewModel());
     Get.lazyPut(() => ProductViewModel());
     Get.lazyPut(() => ControlViewModel());
+    Get.lazyPut(() => CartController());
   }
 }
