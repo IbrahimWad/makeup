@@ -11,17 +11,8 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Obx(
-        () => Column(
-          children: [
-            
-            CustomText(
-                text:
-                    "price ${cartController.totalCartPrice.value.toStringAsFixed(2)}")
-          ],
-        ),
-      ),
+        body: Center(
+      child: CustomText(text: 'bag'),
     ));
   }
 }
