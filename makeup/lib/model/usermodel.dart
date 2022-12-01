@@ -5,14 +5,9 @@ import '../core/controller/cartController.dart';
 
 class UserModel {
   String? userId, email, name;
-  List<CartItemModel>? cart;
+  var cart;
 
-  UserModel({
-    this.email,
-    this.name,
-    this.userId,
-    this.cart,
-  });
+  UserModel({this.email, this.name, this.userId, this.cart});
 
   UserModel.fromeJson(Map<dynamic, dynamic> map) {
     if (map == null) {
@@ -22,7 +17,7 @@ class UserModel {
     userId = map['userId'];
     email = map['email'];
     name = map['name'];
-    cart = map['cart'] ?? [];
+    cart = map['cart'];
   }
 
   toJson() {
@@ -32,15 +27,5 @@ class UserModel {
       'name': name,
       'cart': cart,
     };
-  }
-
-  List<CartItemModel> _converCartItems(List cartFomDb) {
-    List<CartItemModel> _result = [];
-    logger.i(cartFomDb.length);
-    cartFomDb.forEach((element) {
-      _result.add(CartItemModel.fromMap(element));
-    });
-
-    return _result;
   }
 }

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:makeup/model/productModel.dart';
+import 'package:makeup/screen/widget/customBotton.dart';
 import 'package:makeup/screen/widget/customText.dart';
+import 'package:makeup/screen/widget/getBox.dart';
 
 class Details extends StatelessWidget {
   Details({required this.productModel});
@@ -18,7 +20,12 @@ class Details extends StatelessWidget {
             Image.network('${productModel.image}'),
             CustomText(text: "${productModel.name}"),
             //CustomText(text: '${productModel.description}'),
-            CustomText(text: '${productModel.price} DIQ')
+            CustomText(text: '${productModel.price} DIQ'),
+            CustomButton(
+                onPressed: () {
+                  cartController.addProductToCart(productModel);
+                },
+                text: 'add to cart')
           ],
         ),
       ),

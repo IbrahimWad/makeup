@@ -116,5 +116,6 @@ class AuthViewModel extends GetxController {
       userId: user.user!.uid,
       cart: [],
     ));
+    
   }
 }
