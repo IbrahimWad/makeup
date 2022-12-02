@@ -114,8 +114,6 @@ class AuthViewModel extends GetxController {
       email: '${user.user!.email}',
       name: name ?? '${user.user!.displayName}',
       userId: user.user!.uid,
-      cart: [],
     ));
-    
   }
 }

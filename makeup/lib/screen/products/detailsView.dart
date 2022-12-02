@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:makeup/core/controller/cartViewModel.dart';
+import 'package:makeup/model/cartProductModel.dart';
 import 'package:makeup/model/productModel.dart';
 import 'package:makeup/screen/widget/customBotton.dart';
 import 'package:makeup/screen/widget/customText.dart';
@@ -21,11 +24,18 @@ class Details extends StatelessWidget {
             CustomText(text: "${productModel.name}"),
             //CustomText(text: '${productModel.description}'),
             CustomText(text: '${productModel.price} DIQ'),
-            CustomButton(
-                onPressed: () {
-                  cartController.addProductToCart(productModel);
-                },
-                text: 'add to cart')
+            GetBuilder<CartViewModel>(
+                init: CartViewModel(),
+                builder: (controller) => CustomButton(
+                    onPressed: () {
+                      controller.addProduct(CartProductModel(
+                        name: productModel.name,
+                        price: productModel.price,
+                        image: productModel.image,
+                        quantity: 1,
+                      ));
+                    },
+                    text: 'add to cart'))
           ],
         ),
       ),

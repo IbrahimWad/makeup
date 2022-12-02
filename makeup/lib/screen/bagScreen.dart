@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:makeup/core/controller/cartController.dart';
-import 'package:makeup/model/cart_item_model.dart';
+
 import 'package:makeup/screen/widget/customText.dart';
 import 'package:makeup/screen/widget/getBox.dart';
 
